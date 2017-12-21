@@ -19,13 +19,13 @@ Vagrant.configure(2) do |config|
 
      ## To allow to graphically connect to it from the VirtualBox interface
      ## (called 'show in the VirtualBox GUI')
-     vb.gui = true
+     vb.gui = false
 
      # More customizations
      # See https://www.virtualbox.org/manual/ch08.html
      vb.customize ["modifyvm", :id, "--vram", gconfig['vm_vram']]
      # makes mouse/typing more responsive
-     vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
+     vb.customize ["modifyvm", :id, "--accelerate3d", "off"]
      vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
 
      # prevent VM time slipping out of sync by more than 10s (default: 20 min)
